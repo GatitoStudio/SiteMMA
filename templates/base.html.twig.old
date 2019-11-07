@@ -1,0 +1,140 @@
+﻿  <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/carousel/">
+
+    {% block stylesheets %}        
+    <style>
+        body {
+         display: flex;
+         min-height: 100vh;
+         flex-direction: column;       
+       }
+     
+       main {
+         flex: 1 0 auto;
+       }
+     
+       </style>{% endblock %}
+    </head>
+    <body>
+	<header>
+        <nav>
+            <div class="nav-wrapper #d32f2f red darken-2">
+              <a href="/" class="brand-logo">Miage Mulhouse Association</a>
+              <ul class="right hide-on-med-and-down">
+                  <li><a href="/event">Evenements</a></li>
+                  <li><a href="/partners">Partenaires</a></li>
+                  <li><a href="/contact">Contact</a></li>
+                  <li><a href="/connexion"><i class="material-icons">lock</i></a></li>
+
+              </ul>
+            </div>
+          </nav>
+		  </header>
+		  
+        <main>
+
+		<div class="container">
+
+     {% block body %}{% endblock %}
+     <div id='calendar'></div>
+
+		</div>
+        {% block javascripts %}
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">      </script>
+        <link href='http://camillebalmer.fr/fullcalendar/core/main.css' rel='stylesheet' />
+        <link href='http://camillebalmer.fr/fullcalendar/daygrid/main.css' rel='stylesheet' />
+        <link href='http://camillebalmer.fr/fullcalendar/timegrid/main.css' rel='stylesheet' />
+
+        <script src='http://camillebalmer.fr/fullcalendar/core/main.js'></script>
+        <script src='http://camillebalmer.fr/fullcalendar/daygrid/main.js'></script>
+        <script src='http://camillebalmer.fr/fullcalendar/timegrid/main.js'></script>
+
+
+        <script>
+
+            $(document).ready(function(){
+              $('.slider').slider();
+            });
+        </script>
+
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+              var calendarEl = document.getElementById('calendar');
+              // any other event sources... 
+              var calendar = new FullCalendar.Calendar(calendarEl, {
+                eventClick: function(info) {
+                  alert('Event: ' + info.event.extendedProps.department);
+              
+                  // change the border color just for fun
+                  info.el.style.borderColor = 'red';
+                },
+                plugins: [ 'timeGrid'],
+                defaultView: 'timeGridWeek',
+                timeZone: 'UTC',
+                locale: 'fr',
+                maxTime: "19:00:00",
+               minTime: "08:00:00",
+               weekends: false,
+               allDaySlot : false,
+                events: [ // put the array in the `events` property
+                {
+                  title  : 'Programmation orienté objet',
+                  start  : '2019-09-09T08:00:00',
+                  end: '2019-09-09T12:00:00', // a property! ** see important note below about 'end' **
+                  groupId : 'test',
+                  extendedProps:
+                  {
+                    department: 'BioChemistry'
+                  },                
+                }
+              ],
+              color: 'black',     // an option!
+              textColor: 'yellow' // an option!
+              });
+              
+              calendar.render();
+            });
+      
+          </script>
+       
+   
+        
+        {% endblock %}
+      </main>
+        <footer class="page-footer #d32f2f red darken-2">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">Footer Content</h5>
+                  <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Links</h5>
+                  <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div  class="footer-copyright">
+              <div class="container">
+              © 2019 Copyright Text
+              <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+              </div>
+            </div>
+          </footer>
+    </body>
+
+</html>
