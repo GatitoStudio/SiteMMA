@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Entity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Event
  *
  * @ORM\Table(name="event")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\EventRepository")
  */
 class Event
 {
@@ -32,6 +33,7 @@ class Event
      * @var string
      *
      * @ORM\Column(name="Description", type="text", length=65535, nullable=false)
+     * @Assert\Length(min=20,minMessage="La description doit faire au minimum 20 caractères")
      */
     private $description;
 
@@ -39,6 +41,7 @@ class Event
      * @var \DateTime
      *
      * @ORM\Column(name="Date", type="datetime", nullable=false)
+     * @Assert\GreaterThan("today",message="La date de l'évenement ne doit pas être antérieur a la date d'aujourd'hui")
      */
     private $date;
 

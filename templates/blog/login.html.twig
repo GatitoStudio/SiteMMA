@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block  body %}
+<link href="signin.css" rel="stylesheet">
+<link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sign-in/">
+
+
+<form method="post" action="{{ path('security_login')}}" class="form-signin">
+    <img src="74888323_560436191410640_1639442987442241536_n.jpg" class="d-block w-100" alt="...">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" name="_username" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="Password" name="_password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <div class="checkbox mb-3">
+      <label>
+        <input name="putain" type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">&copy;</p>
+  </form>
+  {% endblock %}

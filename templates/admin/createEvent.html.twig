@@ -1,0 +1,33 @@
+﻿{% extends 'admin/baseAdmin.html.twig' %}
+
+{% block title %}Créer un évenement{% endblock %}
+
+{% block body %}
+{{ form_start(eventForm)}}
+<div class="form-group">
+{{ form_row(eventForm.nom,{'label':'Nom de l\'évenement','attr':{ 'placeholder': 'nom de l\'évenement','class':'form-control'}})}}
+</div>
+<div class="form-group">
+  {{ form_row(eventForm.description,{'label':'Description','attr':{ 'placeholder': 'Description de l\'évenement','class':'form-control'}})}}
+  </div>
+  <div class="form-group">
+    {{ form_row(eventForm.date,{'label':'Date','attr':{ 'placeholder': 'Date de l\'event','class':'form-control'}})}}
+    </div>
+    <div class="form-group">
+      {{ form_row(eventForm.heure,{'label':'Heure','attr':{ 'placeholder': 'Heure','class':'form-control'}})}}
+      </div>
+      <div class="form-group">
+        {{ form_row(eventForm.adresse,{'label':'Adresse','attr':{ 'placeholder': 'Adresse','class':'form-control'}})}}
+        </div>
+        <div class="form-group">
+          {{ form_row(eventForm.prixadherent,{'label':'Prix adhérent','attr':{ 'placeholder': 'Saisir le prix','class':'form-control'}})}}
+          </div>
+          <div class="form-group">
+            {{ form_row(eventForm.prixnonadherent,{'label':'Prix non adhérent','attr':{ 'placeholder': 'Saisir le prix','class':'form-control'}})}}
+            </div>
+            <button class="btn btn-lg btn-primary" type="submit">
+              Valider
+          </button>
+{{ form_end(eventForm)}}
+
+{% endblock %}

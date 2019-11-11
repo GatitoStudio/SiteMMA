@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container">
+
+<div class="jumbotron">
+    <h1 class="display-4">{{ event.Nom  }}</h1>
+    <img src="../{{ event.ImageCover  }}" class="card-img-top" alt="...">
+
+    <p class="lead">{{ event.Description  }}</p>
+    <hr class="my-4">
+    <p><em>Adresse de l'évenement: </em>{{ event.Adresse}}</p>
+    <p><em>Prix adhérent: </em>{{ event.PrixAdherent}}€</p>
+    <p><em>Prix  non adhérent: </em>{{ event.PrixNonAdherent}}€</p>
+
+  </div>
+</div>
+  {% endblock %}

@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Fichier
  *
  * @ORM\Table(name="fichier")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\FichierRepository")
  */
 class Fichier
 {
