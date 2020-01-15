@@ -1,0 +1,166 @@
+<?php
+
+namespace Symfony\Component\VarExporter\Internal;
+
+return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
+    $o = [
+        clone (($p = &Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Event',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\Event',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\EventRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Id',
+                        'id' => true,
+                    ],
+                    'nom' => [
+                        'fieldName' => 'nom',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 50,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Nom',
+                    ],
+                    'description' => [
+                        'fieldName' => 'description',
+                        'type' => 'text',
+                        'scale' => 0,
+                        'length' => 65535,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Description',
+                    ],
+                    'date' => [
+                        'fieldName' => 'date',
+                        'type' => 'datetime',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Date',
+                    ],
+                    'heure' => [
+                        'fieldName' => 'heure',
+                        'type' => 'time',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Heure',
+                    ],
+                    'adresse' => [
+                        'fieldName' => 'adresse',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 900,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Adresse',
+                    ],
+                    'imagecover' => [
+                        'fieldName' => 'imagecover',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 900,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'ImageCover',
+                    ],
+                    'prixadherent' => [
+                        'fieldName' => 'prixadherent',
+                        'type' => 'float',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 10,
+                        'columnName' => 'PrixAdherent',
+                    ],
+                    'prixnonadherent' => [
+                        'fieldName' => 'prixnonadherent',
+                        'type' => 'float',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 10,
+                        'columnName' => 'PrixNonAdherent',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'Id' => 'id',
+                    'Nom' => 'nom',
+                    'Description' => 'description',
+                    'Date' => 'date',
+                    'Heure' => 'heure',
+                    'Adresse' => 'adresse',
+                    'ImageCover' => 'imagecover',
+                    'PrixAdherent' => 'prixadherent',
+                    'PrixNonAdherent' => 'prixnonadherent',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'Id',
+                    'nom' => 'Nom',
+                    'description' => 'Description',
+                    'date' => 'Date',
+                    'heure' => 'Heure',
+                    'adresse' => 'Adresse',
+                    'imagecover' => 'ImageCover',
+                    'prixadherent' => 'PrixAdherent',
+                    'prixnonadherent' => 'PrixNonAdherent',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'event',
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+);

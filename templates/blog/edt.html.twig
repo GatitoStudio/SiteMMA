@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<link href='http://camillebalmer.fr/fullcalendar/core/main.css' rel='stylesheet' />
+<link href='http://camillebalmer.fr/fullcalendar/daygrid/main.css' rel='stylesheet' />
+<link href='http://camillebalmer.fr/fullcalendar/timegrid/main.css' rel='stylesheet' />
+
+<script src='http://camillebalmer.fr/fullcalendar/core/main.js'></script>
+<script src='http://camillebalmer.fr/fullcalendar/daygrid/main.js'></script>
+<script src='http://camillebalmer.fr/fullcalendar/timegrid/main.js'></script>
+ <script type="text/javascript" src="{{ asset('ical') }}"></script>
+ <link href="{{ asset('blog') }}" rel="stylesheet">
+
+ 
+ <div class="album py-5 bg-light">
+
+ <div class=" mt-5">
+      <div id='calendar' data-is-authenticated="{{edt}}" class="mt-1"> </div>
+    </div>
+</div>
+{% endblock %}
+{% block javascript %}
+
+<script>
+  function Test(value){
+      let typegrid='timeGridWeek';
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+          typegrid='timeGridDay';
+      }
+                    var calendarEl = document.getElementById('calendar');
+                // any other event sources... 
+               var  calendar2 = new FullCalendar.Calendar(calendarEl, {
+                  eventClick: function(info) {
+                   // alert(info.event.extendedProps.department);
+                
+                    // change the border color just for fun
+                    info.el.style.borderColor = 'red';
+                  },
+                  plugins: [ 'timeGrid'],
+                  defaultView: typegrid,
+                  nowIndicator: true,
+                  handleWindowResize : false,
+                  timeZone: 'local',
+                  hiddenDays : [0],
+                  locale: 'fr',
+                  maxTime: "24:00:00",
+                 minTime: "08:00:00",
+                 scrollTime: "18:00:00",
+                 height: "auto" ,
+                 weekends: true,
+                 allDaySlot : false,
+                color: 'white',     // an option!
+                textColor: 'white' // an option!
+                }); 
+              var jCalData = ICAL.parse(value);
+  var array=[]
+  var test=jCalData[2]
+  var comp = new ICAL.Component(jCalData[2]);
+  //console.log(jCalData[2].length)
+  for(var i=0;i<jCalData[2].length;++i){
+    console.log(jCalData[2][i][1]);
+          var events=	[
+          { 
+            title: jCalData[2][i][1][3][3]+"\n"+jCalData[2][i][1][4][3], // a property!
+            start: jCalData[2][i][1][1][3], // a property!
+            end: jCalData[2][i][1][2][3], // a property! ** see important note below about 'end' **
+           // extendedProps : {department: jCalData[2][i][1][5][3]},
+            textColor: "white"
+
+          }
+        ]
+       // console.log(events[0])
+          //  console.log(calendar)
+  
+        calendar2.addEvent(events[0]);
+          //console.log(jCalData[2][i][1])
+  }
+                calendar2.render();
+  
+  //var vevent = comp.getAllSubcomponents("vevent");
+  
+  //console.log(event.startDate.toJSDate(), event.endDate.toJSDate());
+  }
+  
+  </script>
+
+  <script>
+      var userRating = document.querySelector('#calendar');
+      var isAuthenticated = userRating.dataset.isAuthenticated;
+      Test(isAuthenticated)
+      userRating.dataset.isAuthenticated="";
+    </script>
+    {% endblock %}

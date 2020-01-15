@@ -1,0 +1,3 @@
+{% for unedt in edt%}
+<a class="dropdown-item" href="{{path('showEdt',{id:unedt.Id } )}}"> {{ unedt.Nom}} </a>
+{% endfor %}

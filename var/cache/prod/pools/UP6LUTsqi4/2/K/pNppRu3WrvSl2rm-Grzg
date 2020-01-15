@@ -1,0 +1,118 @@
+<?php
+
+namespace Symfony\Component\VarExporter\Internal;
+
+return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
+    $o = [
+        clone (($p = &Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Tutorat',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\Tutorat',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\TutoratRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Id',
+                        'id' => true,
+                    ],
+                    'date' => [
+                        'fieldName' => 'date',
+                        'type' => 'datetime',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Date',
+                    ],
+                    'heure' => [
+                        'fieldName' => 'heure',
+                        'type' => 'time',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Heure',
+                    ],
+                    'salle' => [
+                        'fieldName' => 'salle',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 100,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Salle',
+                    ],
+                    'batiment' => [
+                        'fieldName' => 'batiment',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 100,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Batiment',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'Id' => 'id',
+                    'Date' => 'date',
+                    'Heure' => 'heure',
+                    'Salle' => 'salle',
+                    'Batiment' => 'batiment',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'Id',
+                    'date' => 'Date',
+                    'heure' => 'Heure',
+                    'salle' => 'Salle',
+                    'batiment' => 'Batiment',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'tutorat',
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+);

@@ -1,0 +1,43 @@
+ /**
+     * @Route("/mot_de_passe_oublie", name="security_forgotten_password")
+     */
+    public function forgottenPassword(ObjectManager $manager,Request $request,UserPasswordEncoderInterface $encoder,\Swift_Mailer $mailer,TokenGeneratorInterface $tokenGenerator ): Response
+    {
+        if ($request->isMethod('POST')) {
+ 
+            $email = $request->request->get('email');
+ 
+            $user = $manager->getRepository(Utilisateur::class)->findOneByEmail($email);
+ 
+            if ($user === null) {
+                $this->addFlash('danger', 'Email Inconnu');
+                return $this->redirectToRoute('home');
+            }
+            $token = $tokenGenerator->generateToken();
+ 
+            try{
+                $user->setResetToken($token);
+                $manager->flush();
+            } catch (\Exception $e) {
+                $this->addFlash('warning', $e->getMessage());
+                return $this->redirectToRoute('home');
+            }
+ 
+            $url = $this->generateUrl('security_reset_password', array('token' => $token), UrlGeneratorInterface::ABSOLUTE_URL);
+ 
+            $message = (new \Swift_Message('Mot de passe oublié'))
+                ->setFrom('administrateur@les-ecuries-du-sundgau.fr')
+                ->setTo($user->getEmail())
+                ->setBody(
+                    " Voici le lien pour modifier votre mot de passe : " . $url,
+                    'text/html'
+                );
+ 
+            $mailer->send($message);
+ 
+            $this->addFlash('notice', 'Mail envoyé');
+ 
+            return $this->redirectToRoute('home');
+        }
+        return $this->render('security/forgotten_password.html.twig');
+    }

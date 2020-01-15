@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+ 
+{% block title %}Mot de passe oublié{% endblock %}
+ 
+{% block body %}
+<div class="general-window card mb-3">
+    <form method="post">
+ 
+        <h1 class="h3 mb-3 font-weight-normal card-header text-primary">Mot de passe oublié</h1>
+        <div class="card-body">
+            <label for="inputEmail" class="sr-only">Email</label>
+            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+            </br>
+            <button class="btn btn-lg btn-primary" type="submit"> Envoyer le mail </button>
+        </div>
+ 
+    </form>
+</div>
+{% endblock %}
+
+{% extends 'base.html.twig' %}
+ 
+{% block title %}Modifier mot de passe {% endblock %}
+
+{% block body %}
+<div class="general-window card">
+    <div class="card-body">
+    {{ form_start(form) }}
+        {{ form_row(form.nouveau_motDePasse) }}
+        {{ form_row(form.confirm_nouveauMotDePasse,{ 'label' : 'Confirmation du mot de passe'}) }}
+        <button type="submit" class="btn btn-success"> Modifier </button>
+    {{ form_end(form)}}
+    </div>
+</div>
+{% endblock %}

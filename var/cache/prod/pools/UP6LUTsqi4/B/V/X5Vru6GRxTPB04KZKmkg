@@ -1,0 +1,130 @@
+<?php
+
+namespace Symfony\Component\VarExporter\Internal;
+
+return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
+    $o = [
+        clone (($p = &Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Users',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\Users',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\UsersRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'ID',
+                        'id' => true,
+                    ],
+                    'mail' => [
+                        'fieldName' => 'mail',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 999,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Mail',
+                    ],
+                    'nom' => [
+                        'fieldName' => 'nom',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 50,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Nom',
+                    ],
+                    'prenom' => [
+                        'fieldName' => 'prenom',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 50,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Prenom',
+                    ],
+                    'role' => [
+                        'fieldName' => 'role',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 100,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Role',
+                    ],
+                    'password' => [
+                        'fieldName' => 'password',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 900,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Password',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'ID' => 'id',
+                    'Mail' => 'mail',
+                    'Nom' => 'nom',
+                    'Prenom' => 'prenom',
+                    'Role' => 'role',
+                    'Password' => 'password',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'ID',
+                    'mail' => 'Mail',
+                    'nom' => 'Nom',
+                    'prenom' => 'Prenom',
+                    'role' => 'Role',
+                    'password' => 'Password',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'users',
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+);

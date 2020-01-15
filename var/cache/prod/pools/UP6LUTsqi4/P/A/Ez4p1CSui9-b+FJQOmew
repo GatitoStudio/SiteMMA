@@ -1,0 +1,94 @@
+<?php
+
+namespace Symfony\Component\VarExporter\Internal;
+
+return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
+    $o = [
+        clone (($p = &Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Annale',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\Annale',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\AnnaleRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'ID',
+                        'id' => true,
+                    ],
+                    'niveau' => [
+                        'fieldName' => 'niveau',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 2,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Niveau',
+                    ],
+                    'lienDrive' => [
+                        'fieldName' => 'lienDrive',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 999,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Lien_drive',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'ID' => 'id',
+                    'Niveau' => 'niveau',
+                    'Lien_drive' => 'lienDrive',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'ID',
+                    'niveau' => 'Niveau',
+                    'lienDrive' => 'Lien_drive',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'annale',
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+);

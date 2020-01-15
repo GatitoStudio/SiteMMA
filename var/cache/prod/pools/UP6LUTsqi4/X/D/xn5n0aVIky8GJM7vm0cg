@@ -1,0 +1,94 @@
+<?php
+
+namespace Symfony\Component\VarExporter\Internal;
+
+return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
+    $o = [
+        clone (($p = &Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Emploisdutemps',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\Emploisdutemps',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\EmploisdutempsRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Id',
+                        'id' => true,
+                    ],
+                    'nom' => [
+                        'fieldName' => 'nom',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 100,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Nom',
+                    ],
+                    'lien' => [
+                        'fieldName' => 'lien',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 999,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Lien',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'Id' => 'id',
+                    'Nom' => 'nom',
+                    'Lien' => 'lien',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'Id',
+                    'nom' => 'Nom',
+                    'lien' => 'Lien',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'emploisdutemps',
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+);

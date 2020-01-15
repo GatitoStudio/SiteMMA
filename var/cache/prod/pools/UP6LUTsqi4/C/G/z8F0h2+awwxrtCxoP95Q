@@ -1,0 +1,209 @@
+<?php
+
+namespace Symfony\Component\VarExporter\Internal;
+
+return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
+    $o = [
+        clone (($p = &Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Offredestage',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\Offredestage',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\OffredestageRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Id',
+                        'id' => true,
+                    ],
+                    'titre' => [
+                        'fieldName' => 'titre',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 250,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Titre',
+                    ],
+                    'datepublication' => [
+                        'fieldName' => 'datepublication',
+                        'type' => 'datetime',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'DatePublication',
+                    ],
+                    'description' => [
+                        'fieldName' => 'description',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 250,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Description',
+                    ],
+                    'descriptiondetail' => [
+                        'fieldName' => 'descriptiondetail',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 500,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'DescriptionDetail',
+                    ],
+                    'nomEntreprise' => [
+                        'fieldName' => 'nomEntreprise',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 500,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Nom_entreprise',
+                    ],
+                    'ville' => [
+                        'fieldName' => 'ville',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 500,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Ville',
+                    ],
+                    'annee' => [
+                        'fieldName' => 'annee',
+                        'type' => 'datetime',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'Annee',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'Id' => 'id',
+                    'Titre' => 'titre',
+                    'DatePublication' => 'datepublication',
+                    'Description' => 'description',
+                    'DescriptionDetail' => 'descriptiondetail',
+                    'Nom_entreprise' => 'nomEntreprise',
+                    'Ville' => 'ville',
+                    'Annee' => 'annee',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'Id',
+                    'titre' => 'Titre',
+                    'datepublication' => 'DatePublication',
+                    'description' => 'Description',
+                    'descriptiondetail' => 'DescriptionDetail',
+                    'nomEntreprise' => 'Nom_entreprise',
+                    'ville' => 'Ville',
+                    'annee' => 'Annee',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'offredestage',
+                ],
+            ],
+            'associationMappings' => [
+                [
+                    'idFichier' => [
+                        'fieldName' => 'idFichier',
+                        'joinTable' => [
+                            'name' => 'contient',
+                            'schema' => null,
+                            'joinColumns' => [
+                                [
+                                    'name' => 'Id_contient',
+                                    'unique' => false,
+                                    'nullable' => true,
+                                    'onDelete' => null,
+                                    'columnDefinition' => null,
+                                    'referencedColumnName' => 'Id',
+                                ],
+                            ],
+                            'inverseJoinColumns' => [
+                                [
+                                    'name' => 'Id_Fichier',
+                                    'unique' => false,
+                                    'nullable' => true,
+                                    'onDelete' => null,
+                                    'columnDefinition' => null,
+                                    'referencedColumnName' => 'Id',
+                                ],
+                            ],
+                        ],
+                        'targetEntity' => 'App\\Entity\\Fichier',
+                        'mappedBy' => null,
+                        'inversedBy' => 'idContient',
+                        'cascade' => [],
+                        'orphanRemoval' => false,
+                        'fetch' => 2,
+                        'type' => 8,
+                        'isOwningSide' => true,
+                        'sourceEntity' => 'App\\Entity\\Offredestage',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                        'joinTableColumns' => [
+                            'Id_contient',
+                            'Id_Fichier',
+                        ],
+                        'relationToSourceKeyColumns' => [
+                            'Id_contient' => 'Id',
+                        ],
+                        'relationToTargetKeyColumns' => [
+                            'Id_Fichier' => 'Id',
+                        ],
+                    ],
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+);
