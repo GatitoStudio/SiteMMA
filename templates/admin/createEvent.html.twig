@@ -3,12 +3,13 @@
 {% block title %}Créer un évenement{% endblock %}
 
 {% block body %}
+
 {{ form_start(eventForm)}}
 <div class="form-group">
 {{ form_row(eventForm.nom,{'label':'Nom de l\'évenement','attr':{ 'placeholder': 'nom de l\'évenement','class':'form-control'}})}}
 </div>
 <div class="form-group">
-  {{ form_row(eventForm.description,{'label':'Description','attr':{ 'placeholder': 'Description de l\'évenement','class':'form-control'}})}}
+  {{ form_row(eventForm.description,{'label':'Description','attr':{ 'placeholder': 'Description de l\'évenement'}})}}
   </div>
   <div class="form-group">
     {{ form_row(eventForm.date,{'label':'Date','attr':{ 'placeholder': 'Date de l\'event','class':'form-control'}})}}

@@ -22,10 +22,12 @@ class EventRepository extends ServiceEntityRepository
     {
         // automatically knows to select Products
         // the "p" is an alias you'll use in the rest of the query
+        $date->setTime(0,0,0);
+
         $qb = $this->createQueryBuilder('p')
             ->where('p.date >= :date')
             ->setParameter('date', $date)
-            ->orderBy('p.date', 'desc');
+            ->orderBy('p.date', 'ASC');
         $query = $qb->getQuery();
         return $query->execute();
     }

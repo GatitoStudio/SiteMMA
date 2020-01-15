@@ -41,7 +41,6 @@ class Event
      * @var \DateTime
      *
      * @ORM\Column(name="Date", type="datetime", nullable=false)
-     * @Assert\GreaterThan("today",message="La date de l'évenement ne doit pas être antérieur a la date d'aujourd'hui")
      */
     private $date;
 

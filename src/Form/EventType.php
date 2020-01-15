@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Event;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -11,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class EventType extends AbstractType
 {
@@ -18,7 +20,7 @@ class EventType extends AbstractType
     {
         $builder
             ->add('nom')
-            ->add('description')
+            ->add('description',CKEditorType::class)
             ->add('date',DateType::class, ['widget' => 'single_text' ,'attr' => ['class' => 'js-datepicker'],])
             ->add('heure',TimeType::class, [
                 'input'  => 'datetime',

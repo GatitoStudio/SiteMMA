@@ -1,17 +1,19 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-<div class="container">
+<div class="container mt-5">
 
-<div class="jumbotron">
-    <h1 class="display-4">{{ event.Nom  }}</h1>
-    <img src="../{{ event.ImageCover  }}" class="card-img-top" alt="...">
-
-    <p class="lead">{{ event.Description  }}</p>
+<div class="jumbotron mt-5">
+    <h1 class="display-4 " style="text-align:center;word-wrap: break-word;">{{ event.Nom  }}</h1>
+    <img src="{{ event.ImageCover  }}" class="card-img-top" alt="...">
+<div style="word-wrap: break-word;">{{ event.Description |raw   }}</div>  
     <hr class="my-4">
     <p><em>Adresse de l'évenement: </em>{{ event.Adresse}}</p>
     <p><em>Prix adhérent: </em>{{ event.PrixAdherent}}€</p>
     <p><em>Prix  non adhérent: </em>{{ event.PrixNonAdherent}}€</p>
 
   </div>
-</div>
+  <div class="badge badge-primary text-wrap" style="width: 6rem;">
+    This text should wrap.
+  </div>
+
   {% endblock %}

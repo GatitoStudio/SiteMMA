@@ -66,9 +66,22 @@
             <a class="collapse-item" href="{{path('createEvent')}}">Créer un évent</a>
           </div>
         </div>
+        
       </li>
 
-
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseTwoo" aria-expanded="true" aria-controls="collapseTwoo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Annales</span>
+        </a>
+        <div id="collapseTwoo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href=" {{path('Adminevents')}} ">Liste annales</a>
+            <a class="collapse-item" href="{{path('createEvent')}}">Ajouter un annale</a>
+          </div>
+        </div>
+        
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -148,7 +161,6 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
           </div>
 
           <!-- Content Row -->
