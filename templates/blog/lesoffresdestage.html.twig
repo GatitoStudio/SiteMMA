@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <div class="album py-5 bg-light mt-5">
+        <div class="container">
+            {% if offres|length > 0 %}
+
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Intitulé du poste</th>
+                      <th>Nom de l'entreprise</th>
+                      <th>Description</th>
+                      <th>Ville</th>
+                      <th>Annee</th>
+                      <th>Date Publication</th>
+                    </tr>
+                  </thead>
+        
+                  <tbody>
+                    {% for offre in offres%}
+                    <tr>
+                      <td>{{ offre.Titre }}</td>
+                      <td>{{ offre.Nomentreprise }}</td>
+                      <td><a href="{{path('ShowOffresStage',{id:offre.Id } )}}">{{ offre.Description }}</a></td>
+                      <td>{{ offre.Ville  }}</td>
+                      <td>{{ offre.Annee }}</td>
+                      <td> {{ offre.DatePublication | date('d/m/Y') }}</td>
+                      {# <td>
+                          <a href="{{path('ShowOS',{id:offre.Id } )}}"  ><i class="material-icons"> edit</i></a>
+                          <a onclick="if(window.confirm('Voulez-vous vraiment supprimer ?')){return true;}else{return false;}" href="{{path('deleteOffre',{id:offre.Id } )}}" ><i class="material-icons"> delete</i></a>
+                        </td> #}
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+
+                </div>
+            {% else %}
+                <div class="alert alert-primary mt-4" role="alert">
+                    Aucune offre de stage pour cette année 
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

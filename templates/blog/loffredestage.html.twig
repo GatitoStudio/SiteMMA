@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container mt-5">
+
+<div class="jumbotron mt-5">
+    <h1 class="display-4 " style="text-align:center;word-wrap: break-word;">{{ offre.Titre  }}</h1>
+<div style="word-wrap: break-word;">{{ offre.DescriptionDetail | raw   }}</div>  
+    <hr class="my-4">
+    <p><em>Nom de l'entreprise: </em>{{ offre.NomEntreprise}}</p>
+    <p><em>Ville: </em>{{ offre.NomEntreprise}}</p>
+    <p><em>Annee: </em>{{ offre.Annee}}</p>
+    <p><em>Date Publication: </em>{{ offre.DatePublication | date('d/m/Y')}}</p>
+    
+
+  </div>
+
+
+  {% endblock %}

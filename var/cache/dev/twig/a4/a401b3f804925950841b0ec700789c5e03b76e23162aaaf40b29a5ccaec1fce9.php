@@ -78,7 +78,7 @@ class __TwigTemplate_38a84b8a2b52222ca15b50342ba7968c08e1c9157a56447f6e1ec9f8652
     <div id=\"carouselExampleControls\" class=\"carousel slide d-none d-lg-block\" data-ride=\"carousel\">
       <div class=\"carousel-inner\">
         <div class=\"carousel-item active\" data-interval=\"5000\">
-          <img src=\"53684119_2453086334704471_8359986827565727744_o.jpg\" class=\"d-block w-100\" alt=\"...\">
+          <img src=\"https://via.placeholder.com/150\" class=\"d-block w-100\" alt=\"...\">
         </div>
         <div class=\"carousel-item\" data-interval=\"5000\">
           <img src=\"https://via.placeholder.com/150\"  class=\"d-block w-100\" alt=\"...\">
@@ -211,7 +211,7 @@ class __TwigTemplate_38a84b8a2b52222ca15b50342ba7968c08e1c9157a56447f6e1ec9f8652
     <div id=\"carouselExampleControls\" class=\"carousel slide d-none d-lg-block\" data-ride=\"carousel\">
       <div class=\"carousel-inner\">
         <div class=\"carousel-item active\" data-interval=\"5000\">
-          <img src=\"53684119_2453086334704471_8359986827565727744_o.jpg\" class=\"d-block w-100\" alt=\"...\">
+          <img src=\"https://via.placeholder.com/150\" class=\"d-block w-100\" alt=\"...\">
         </div>
         <div class=\"carousel-item\" data-interval=\"5000\">
           <img src=\"https://via.placeholder.com/150\"  class=\"d-block w-100\" alt=\"...\">

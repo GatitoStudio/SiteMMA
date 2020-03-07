@@ -1,0 +1,56 @@
+{% extends 'admin/baseAdmin.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Offres de stage</h1>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Liste des offres de stage</h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Titre</th>
+              <th>Date Publication</th>
+              <th>Description</th>
+              <th>Nom entreprise</th>
+              <th>Ville</th>
+              <th>Annee</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for offre in OffresStage%}
+            <tr>
+              <td>{{ offre.Titre }}</td>
+              <td>{{ offre.DatePublication | date('d/m/Y') }}</td>
+              <td>{{ offre.Description  }}</td>
+              <td>{{ offre.Nomentreprise }}</td>
+              <td> {{ offre.Ville}}</td>
+              <td>{{ offre.Annee}}</td>
+              <td>
+                  <a href="{{path('ShowOS',{id:offre.Id } )}}"  ><i class="material-icons"> edit</i></a>
+                  <a onclick="if(window.confirm('Voulez-vous vraiment supprimer ?')){return true;}else{return false;}" href="{{path('deleteOffre',{id:offre.Id } )}}" ><i class="material-icons"> delete</i></a>
+                </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+{% endblock %}

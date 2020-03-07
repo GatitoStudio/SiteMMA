@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Repository\EventRepository;
 use App\Repository\UsersRepository;
 use App\Repository\AnnaleRepository;
+use App\Repository\OffredestageRepository;
 use App\Repository\EmploisdutempsRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Security;
@@ -89,5 +90,24 @@ class MMAsiteController extends AbstractController
         ]
     );
     }
-
+    /**
+     * @Route("/offresStage", name="OffresStage")
+     */
+    public function lesOffreStage(OffredestageRepository $repo){
+        $lesoffres=$repo->findAll();
+        return $this->render('blog/lesoffresdestage.html.twig',[
+            'offres'=>$lesoffres
+        ]
+    );
+    }
+    /**
+     * @Route("/offresStage/{id}", name="ShowOffresStage")
+     */
+    public function ShowOffreStage(OffredestageRepository $repo,$id){
+        $loffres=$repo->find($id);
+        return $this->render('blog/loffredestage.html.twig',[
+            'offre'=>$loffres
+        ]
+    );
+    }
 }

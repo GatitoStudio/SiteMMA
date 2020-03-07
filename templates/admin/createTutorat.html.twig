@@ -1,0 +1,27 @@
+﻿{% extends 'admin/baseAdmin.html.twig' %}
+
+{% block title %}Créer un évenement{% endblock %}
+
+{% block body %}
+
+{{ form_start(tutoForm)}}
+<div class="form-group">
+  {{ form_row(tutoForm.Date,{'label':'Date du tutorat','attr':{ 'class':'form-control'}})}}
+  </div>
+  <div class="form-group">
+    {{ form_row(tutoForm.Heure,{'label':'Heure'}) }}
+    </div>
+    <div class="form-group">
+      {{ form_row(tutoForm.Batiment,{'label':'Batiment','attr':{ 'placeholder': 'Nom du batiment','class':'form-control'}})}}
+      </div>
+    <div class="form-group">
+      {{ form_row(tutoForm.Salle,{'label':'Salle','attr':{ 'placeholder': 'Numéro de la salle','class':'form-control'}})}}
+      </div>
+
+
+<button class="btn btn-lg btn-primary" type="submit">
+  Valider
+</button>
+{{ form_end(tutoForm)}}
+
+{% endblock %}

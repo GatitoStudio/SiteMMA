@@ -54,16 +54,15 @@ class __TwigTemplate_02a1a4477af7dd5d4fd1c9c3359fef71080e29204d020a8bc0c1f482086
   <title>Dashboard</title>
 
   <!-- Custom fonts for this template-->
+  <link href=\"";
+        // line 14
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("all"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
   <link href=\"https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i\" rel=\"stylesheet\">
-
   <!-- Custom styles for this template-->
   <link href=\"";
         // line 17
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("sbadmin"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
-  <link href=\"";
-        // line 18
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("all"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 
 
@@ -79,7 +78,7 @@ class __TwigTemplate_02a1a4477af7dd5d4fd1c9c3359fef71080e29204d020a8bc0c1f482086
 
       <!-- Sidebar - Brand -->
       <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"";
-        // line 32
+        // line 31
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("adminPanel");
         echo "\">
         <div class=\"sidebar-brand-icon rotate-n-15\">
@@ -94,7 +93,7 @@ class __TwigTemplate_02a1a4477af7dd5d4fd1c9c3359fef71080e29204d020a8bc0c1f482086
       <!-- Nav Item - Dashboard -->
       <li class=\"nav-item active\">
         <a class=\"nav-link\" href=\"";
-        // line 44
+        // line 43
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("adminPanel");
         echo "\">
           <i class=\"fas fa-fw fa-tachometer-alt\"></i>
@@ -118,11 +117,11 @@ class __TwigTemplate_02a1a4477af7dd5d4fd1c9c3359fef71080e29204d020a8bc0c1f482086
         <div id=\"collapseTwo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\">
           <div class=\"bg-white py-2 collapse-inner rounded\">
             <a class=\"collapse-item\" href=\" ";
-        // line 65
+        // line 64
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("Adminevents");
         echo " \">Liste des events</a>
             <a class=\"collapse-item\" href=\"";
-        // line 66
+        // line 65
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("createEvent");
         echo "\">Créer un évent</a>
           </div>
@@ -138,18 +137,68 @@ class __TwigTemplate_02a1a4477af7dd5d4fd1c9c3359fef71080e29204d020a8bc0c1f482086
         <div id=\"collapseTwoo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\">
           <div class=\"bg-white py-2 collapse-inner rounded\">
             <a class=\"collapse-item\" href=\" ";
-        // line 79
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("Adminevents");
+        // line 78
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("AdminAnnals");
         echo " \">Liste annales</a>
-            <a class=\"collapse-item\" href=\"";
-        // line 80
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("createEvent");
-        echo "\">Ajouter un annale</a>
           </div>
         </div>
         
       </li>
 
+      <li class=\"nav-item\">
+        <a class=\"nav-link collapsed\" href=\"\" data-toggle=\"collapse\" data-target=\"#collapseThree\" aria-expanded=\"true\" aria-controls=\"collapseThree\">
+          <i class=\"fas fa-fw fa-cog\"></i>
+          <span>Offre de stage</span>
+        </a>
+        <div id=\"collapseThree\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\">
+          <div class=\"bg-white py-2 collapse-inner rounded\">
+            <a class=\"collapse-item\" href=\" ";
+        // line 91
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("AdminOffreStage");
+        echo " \">Lister les offres de stage</a>
+            <a class=\"collapse-item\" href=\"";
+        // line 92
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("createOS");
+        echo "\">Ajouter une offre de stage</a>
+          </div>
+        </div>     
+      </li>
+      <li class=\"nav-item\">
+        <a class=\"nav-link collapsed\" href=\"\" data-toggle=\"collapse\" data-target=\"#collapseFour\" aria-expanded=\"true\" aria-controls=\"collapseFour\">
+          <i class=\"fas fa-fw fa-cog\"></i>
+          <span>Tutorat</span>
+        </a>
+        <div id=\"collapseFour\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\">
+          <div class=\"bg-white py-2 collapse-inner rounded\">
+            <a class=\"collapse-item\" href=\" ";
+        // line 103
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("AdminTutorats");
+        echo " \">Lister les tutorats</a>
+            <a class=\"collapse-item\" href=\"";
+        // line 104
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("createTutorat");
+        echo "\">Ajouter un tutorat</a>
+          </div>
+        </div>     
+      </li>
+      <li class=\"nav-item\">
+        <a class=\"nav-link collapsed\" href=\"\" data-toggle=\"collapse\" data-target=\"#collapseFive\" aria-expanded=\"true\" aria-controls=\"collapseFive\">
+          <i class=\"fas fa-fw fa-cog\"></i>
+          <span>Utilisateurs</span>
+        </a>
+        <div id=\"collapseFive\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\">
+          <div class=\"bg-white py-2 collapse-inner rounded\">
+            <a class=\"collapse-item\" href=\" ";
+        // line 115
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("AdminOffreStage");
+        echo " \">Lister les utilisateurs</a>
+            <a class=\"collapse-item\" href=\"";
+        // line 116
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("createOS");
+        echo "\">Ajouter un utilisateur</a>
+          </div>
+        </div>     
+      </li>
       <!-- Divider -->
       <hr class=\"sidebar-divider\">
 
@@ -191,14 +240,14 @@ class __TwigTemplate_02a1a4477af7dd5d4fd1c9c3359fef71080e29204d020a8bc0c1f482086
 
             <!-- Nav Item - User Information -->
             <li class=\"nav-item dropdown no-arrow\">
-              <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+              <a class=\"nav-link dropdown-toggle\" role=\"button\" href=\"#\" id=\"userDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                 <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">";
-        // line 128
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 128, $this->source); })()), "user", [], "any", false, false, false, 128), "Prenom", [], "any", false, false, false, 128), "html", null, true);
+        // line 162
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 162, $this->source); })()), "user", [], "any", false, false, false, 162), "Prenom", [], "any", false, false, false, 162), "html", null, true);
         echo " ";
         echo " ";
         echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 128, $this->source); })()), "user", [], "any", false, false, false, 128), "Nom", [], "any", false, false, false, 128), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 162, $this->source); })()), "user", [], "any", false, false, false, 162), "Nom", [], "any", false, false, false, 162), "html", null, true);
         echo "</span>
                 <img class=\"img-profile rounded-circle\" src=\"https://i.pinimg.com/originals/93/bf/94/93bf940422372f478d45c53f00a7847e.jpg\">
               </a>
@@ -208,14 +257,18 @@ class __TwigTemplate_02a1a4477af7dd5d4fd1c9c3359fef71080e29204d020a8bc0c1f482086
                   <i class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i>
                   Profile
                 </a>
+                <!--
                 <a class=\"dropdown-item\" href=\"#\">
                   <i class=\"fas fa-cogs fa-sm fa-fw mr-2 text-gray-400\"></i>
                   Settings
                 </a>
+                -->
+                <!--
                 <a class=\"dropdown-item\" href=\"#\">
                   <i class=\"fas fa-list fa-sm fa-fw mr-2 text-gray-400\"></i>
                   Activity Log
                 </a>
+                -->
                 <div class=\"dropdown-divider\"></div>
                 <a class=\"dropdown-item\" href=\"#\" data-toggle=\"modal\" data-target=\"#logoutModal\">
                   <i class=\"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400\"></i>
@@ -240,9 +293,9 @@ class __TwigTemplate_02a1a4477af7dd5d4fd1c9c3359fef71080e29204d020a8bc0c1f482086
           <!-- Content Row -->
  
           ";
-        // line 168
+        // line 206
         $this->displayBlock('body', $context, $blocks);
-        // line 171
+        // line 209
         echo "   
 
 
@@ -287,45 +340,47 @@ class __TwigTemplate_02a1a4477af7dd5d4fd1c9c3359fef71080e29204d020a8bc0c1f482086
         <div class=\"modal-footer\">
           <button class=\"btn btn-secondary\" type=\"button\" data-dismiss=\"modal\">Non</button>
           <a class=\"btn btn-primary\" href=\" ";
-        // line 214
+        // line 252
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo " \">Oui</a>
         </div>
       </div>
     </div>
   </div>
-
   <script src=\"";
-        // line 220
+        // line 257
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("jquery"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 221
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("jqueryeasy"), "html", null, true);
-        echo "\"></script>
-  <script src=\"";
-        // line 222
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("sb-js"), "html", null, true);
-        echo "\"></script>
-  <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
-  
-  <script src=\"";
-        // line 225
+        // line 258
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("boot"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 226
+        // line 259
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("jqueryeasy"), "html", null, true);
+        echo "\"></script>
+
+  <script src=\"";
+        // line 261
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("sb-js"), "html", null, true);
+        echo "\"></script>
+
+  <!--<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script> -->
+  
+  <script src=\"";
+        // line 265
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("datatablejquery"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 227
+        // line 266
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("datatableBoostrap"), "html", null, true);
         echo "\"></script>
   <!-- Page level custom scripts -->
   <script src=\"";
-        // line 229
+        // line 268
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("datatable"), "html", null, true);
         echo "\"></script>
+
 </body>
 
 </html>
@@ -338,7 +393,7 @@ class __TwigTemplate_02a1a4477af7dd5d4fd1c9c3359fef71080e29204d020a8bc0c1f482086
 
     }
 
-    // line 168
+    // line 206
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -371,7 +426,7 @@ class __TwigTemplate_02a1a4477af7dd5d4fd1c9c3359fef71080e29204d020a8bc0c1f482086
 
     public function getDebugInfo()
     {
-        return array (  342 => 168,  327 => 229,  322 => 227,  318 => 226,  314 => 225,  308 => 222,  304 => 221,  300 => 220,  291 => 214,  246 => 171,  244 => 168,  197 => 128,  146 => 80,  142 => 79,  126 => 66,  122 => 65,  98 => 44,  83 => 32,  66 => 18,  62 => 17,  44 => 1,);
+        return array (  397 => 206,  381 => 268,  376 => 266,  372 => 265,  365 => 261,  360 => 259,  356 => 258,  352 => 257,  344 => 252,  299 => 209,  297 => 206,  246 => 162,  197 => 116,  193 => 115,  179 => 104,  175 => 103,  161 => 92,  157 => 91,  141 => 78,  125 => 65,  121 => 64,  97 => 43,  82 => 31,  65 => 17,  59 => 14,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -389,11 +444,10 @@ class __TwigTemplate_02a1a4477af7dd5d4fd1c9c3359fef71080e29204d020a8bc0c1f482086
   <title>Dashboard</title>
 
   <!-- Custom fonts for this template-->
+  <link href=\"{{ asset('all') }}\" rel=\"stylesheet\">
   <link href=\"https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i\" rel=\"stylesheet\">
-
   <!-- Custom styles for this template-->
   <link href=\"{{ asset('sbadmin') }}\" rel=\"stylesheet\">
-  <link href=\"{{ asset('all') }}\" rel=\"stylesheet\">
 
 
 </head>
@@ -454,13 +508,48 @@ class __TwigTemplate_02a1a4477af7dd5d4fd1c9c3359fef71080e29204d020a8bc0c1f482086
         </a>
         <div id=\"collapseTwoo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\">
           <div class=\"bg-white py-2 collapse-inner rounded\">
-            <a class=\"collapse-item\" href=\" {{path('Adminevents')}} \">Liste annales</a>
-            <a class=\"collapse-item\" href=\"{{path('createEvent')}}\">Ajouter un annale</a>
+            <a class=\"collapse-item\" href=\" {{path('AdminAnnals')}} \">Liste annales</a>
           </div>
         </div>
         
       </li>
 
+      <li class=\"nav-item\">
+        <a class=\"nav-link collapsed\" href=\"\" data-toggle=\"collapse\" data-target=\"#collapseThree\" aria-expanded=\"true\" aria-controls=\"collapseThree\">
+          <i class=\"fas fa-fw fa-cog\"></i>
+          <span>Offre de stage</span>
+        </a>
+        <div id=\"collapseThree\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\">
+          <div class=\"bg-white py-2 collapse-inner rounded\">
+            <a class=\"collapse-item\" href=\" {{path('AdminOffreStage')}} \">Lister les offres de stage</a>
+            <a class=\"collapse-item\" href=\"{{path('createOS')}}\">Ajouter une offre de stage</a>
+          </div>
+        </div>     
+      </li>
+      <li class=\"nav-item\">
+        <a class=\"nav-link collapsed\" href=\"\" data-toggle=\"collapse\" data-target=\"#collapseFour\" aria-expanded=\"true\" aria-controls=\"collapseFour\">
+          <i class=\"fas fa-fw fa-cog\"></i>
+          <span>Tutorat</span>
+        </a>
+        <div id=\"collapseFour\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\">
+          <div class=\"bg-white py-2 collapse-inner rounded\">
+            <a class=\"collapse-item\" href=\" {{path('AdminTutorats')}} \">Lister les tutorats</a>
+            <a class=\"collapse-item\" href=\"{{path('createTutorat')}}\">Ajouter un tutorat</a>
+          </div>
+        </div>     
+      </li>
+      <li class=\"nav-item\">
+        <a class=\"nav-link collapsed\" href=\"\" data-toggle=\"collapse\" data-target=\"#collapseFive\" aria-expanded=\"true\" aria-controls=\"collapseFive\">
+          <i class=\"fas fa-fw fa-cog\"></i>
+          <span>Utilisateurs</span>
+        </a>
+        <div id=\"collapseFive\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\">
+          <div class=\"bg-white py-2 collapse-inner rounded\">
+            <a class=\"collapse-item\" href=\" {{path('AdminOffreStage')}} \">Lister les utilisateurs</a>
+            <a class=\"collapse-item\" href=\"{{path('createOS')}}\">Ajouter un utilisateur</a>
+          </div>
+        </div>     
+      </li>
       <!-- Divider -->
       <hr class=\"sidebar-divider\">
 
@@ -502,7 +591,7 @@ class __TwigTemplate_02a1a4477af7dd5d4fd1c9c3359fef71080e29204d020a8bc0c1f482086
 
             <!-- Nav Item - User Information -->
             <li class=\"nav-item dropdown no-arrow\">
-              <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+              <a class=\"nav-link dropdown-toggle\" role=\"button\" href=\"#\" id=\"userDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                 <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">{{ app.user.Prenom}} {{\" \"}} {{ app.user.Nom }}</span>
                 <img class=\"img-profile rounded-circle\" src=\"https://i.pinimg.com/originals/93/bf/94/93bf940422372f478d45c53f00a7847e.jpg\">
               </a>
@@ -512,14 +601,18 @@ class __TwigTemplate_02a1a4477af7dd5d4fd1c9c3359fef71080e29204d020a8bc0c1f482086
                   <i class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i>
                   Profile
                 </a>
+                <!--
                 <a class=\"dropdown-item\" href=\"#\">
                   <i class=\"fas fa-cogs fa-sm fa-fw mr-2 text-gray-400\"></i>
                   Settings
                 </a>
+                -->
+                <!--
                 <a class=\"dropdown-item\" href=\"#\">
                   <i class=\"fas fa-list fa-sm fa-fw mr-2 text-gray-400\"></i>
                   Activity Log
                 </a>
+                -->
                 <div class=\"dropdown-divider\"></div>
                 <a class=\"dropdown-item\" href=\"#\" data-toggle=\"modal\" data-target=\"#logoutModal\">
                   <i class=\"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400\"></i>
@@ -594,17 +687,19 @@ class __TwigTemplate_02a1a4477af7dd5d4fd1c9c3359fef71080e29204d020a8bc0c1f482086
       </div>
     </div>
   </div>
-
   <script src=\"{{ asset('jquery') }}\"></script>
-  <script src=\"{{ asset('jqueryeasy') }}\"></script>
-  <script src=\"{{ asset('sb-js') }}\"></script>
-  <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
-  
   <script src=\"{{ asset('boot') }}\"></script>
+  <script src=\"{{ asset('jqueryeasy') }}\"></script>
+
+  <script src=\"{{ asset('sb-js') }}\"></script>
+
+  <!--<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script> -->
+  
   <script src=\"{{ asset('datatablejquery') }}\"></script>
   <script src=\"{{ asset('datatableBoostrap') }}\"></script>
   <!-- Page level custom scripts -->
   <script src=\"{{ asset('datatable') }}\"></script>
+
 </body>
 
 </html>

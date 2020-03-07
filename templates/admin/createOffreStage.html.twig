@@ -1,0 +1,34 @@
+﻿{% extends 'admin/baseAdmin.html.twig' %}
+
+{% block title %}Créer un évenement{% endblock %}
+
+{% block body %}
+
+{{ form_start(OsForm)}}
+<div class="form-group">
+  {{ form_row(OsForm.titre,{'label':'Nom de l\'offre de stage','attr':{ 'placeholder': 'nom','class':'form-control'}})}}
+  </div>
+  <div class="form-group">
+    {{ form_row(OsForm.date_publication,{'label':'Date de publication'}) }}
+    </div>
+    <div class="form-group">
+      {{ form_row(OsForm.description,{'label':'Description','attr':{ 'placeholder': 'Description','class':'form-control'}})}}
+      </div>
+      <div class="form-group">
+        {{ form_row(OsForm.description_detail,{'label':'Description détaillée','attr':{ 'placeholder': 'Description détaillée','class':'form-control'}})}}
+        </div>
+        <div class="form-group">
+          {{ form_row(OsForm.Nom_Entreprise,{'label':'Nom de l\'entreprise','attr':{ 'placeholder': 'Nom de l\'entreprise','class':'form-control'}})}}
+          </div>
+          <div class="form-group">
+            {{ form_row(OsForm.ville,{'label':'Ville','attr':{ 'placeholder': 'Nom de la ville','class':'form-control'}})}}
+            </div>
+            <div class="form-group">
+              {{ form_row(OsForm.annee,{'label':'Année pour l\'offre','attr':{ 'placeholder': '','class':'form-control'}})}}
+              </div>
+<button class="btn btn-lg btn-primary" type="submit">
+  Valider
+</button>
+{{ form_end(OsForm)}}
+
+{% endblock %}

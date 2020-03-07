@@ -1,0 +1,53 @@
+{% extends 'admin/baseAdmin.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Les events</h1>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Liste des évenements</h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Heure</th>
+              <th>Batiment</th>
+              <th>Salle</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for tuto in tutorats%}
+            <tr>
+              <td>{{ tuto.Date | date('d/m/Y') }}</td>
+              <td>{{ tuto.Heure| date('H') }}h{{ tuto.Heure | date('i')  }}</td>
+              <td>{{ tuto.Batiment }}</td>
+              <td>{{ tuto.Salle }}</td>
+              <td>
+                  <a href="{{path('ShowTutorat',{id:tuto.Id } )}}"  ><i class="material-icons"> edit</i></a>
+                  <a onclick="if(window.confirm('Voulez-vous vraiment supprimer ?')){return true;}else{return false;}" href="{{path('deleteTutorat',{id:tuto.Id } )}}" ><i class="material-icons"> delete</i></a>
+
+                </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+{% endblock %}

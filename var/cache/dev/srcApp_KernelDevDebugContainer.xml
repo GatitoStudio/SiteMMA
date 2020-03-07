@@ -438,6 +438,12 @@
     <service id="App\Form\EventType" class="App\Form\EventType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\OffreStageType" class="App\Form\OffreStageType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\TutoratType" class="App\Form\TutoratType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Repository\AnnaleRepository" class="App\Repository\AnnaleRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -816,6 +822,8 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\EventType</argument>
+        <argument>App\Form\OffreStageType</argument>
+        <argument>App\Form\TutoratType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -1084,7 +1092,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.KqfP9O1"/>
+      <argument type="service" id=".service_locator.ibK6lxe"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4890,6 +4898,10 @@
     <service id=".abstract.instanceof.App\DataFixtures\EventsFixtures" class="App\DataFixtures\EventsFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EventType" class="App\Form\EventType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\EventType" class="App\Form\EventType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\OffreStageType" class="App\Form\OffreStageType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\OffreStageType" class="App\Form\OffreStageType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\TutoratType" class="App\Form\TutoratType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\TutoratType" class="App\Form\TutoratType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AnnaleRepository" class="App\Repository\AnnaleRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AnnaleRepository" class="App\Repository\AnnaleRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EmploisdutempsRepository" class="App\Repository\EmploisdutempsRepository" autowire="true" abstract="true"/>
@@ -5087,6 +5099,50 @@
         <argument key="repo" type="service" id="App\Repository\EventRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.CLwvqTZ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.BKGwNgw" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repo" type="service" id="App\Repository\OffredestageRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.3jktu2N" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
+        <argument key="repo" type="service" id="App\Repository\OffredestageRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.qNknoeq" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repo" type="service" id="App\Repository\AnnaleRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.zbFsM9Z" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.EUX4yGg" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repo" type="service" id="App\Repository\TutoratRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.BCcm9LD" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
+        <argument key="repo" type="service" id="App\Repository\TutoratRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.Xmiscbh" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5100,36 +5156,52 @@
         <argument key="repo" type="service" id="App\Repository\EmploisdutempsRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.qNknoeq" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="repo" type="service" id="App\Repository\AnnaleRepository"/>
-      </argument>
-    </service>
     <service id=".service_locator.EbLunuf" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.X9sqLp5" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.zKZMrH0" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\AdminController::CreateOffreStage" type="service" id=".service_locator.CLwvqTZ"/>
+        <argument key="App\Controller\AdminController::CreateTutorat" type="service" id=".service_locator.zbFsM9Z"/>
+        <argument key="App\Controller\AdminController::DeleteAnnale" type="service" id=".service_locator.qNknoeq"/>
         <argument key="App\Controller\AdminController::DeleteEvent" type="service" id=".service_locator.dU7J6TP"/>
+        <argument key="App\Controller\AdminController::DeleteOffre" type="service" id=".service_locator.3jktu2N"/>
+        <argument key="App\Controller\AdminController::DeleteTutorat" type="service" id=".service_locator.BCcm9LD"/>
         <argument key="App\Controller\AdminController::createEvent" type="service" id=".service_locator.LvxXihR"/>
+        <argument key="App\Controller\AdminController::showAnnale" type="service" id=".service_locator.qNknoeq"/>
+        <argument key="App\Controller\AdminController::showAnnales" type="service" id=".service_locator.qNknoeq"/>
         <argument key="App\Controller\AdminController::showEvents" type="service" id=".service_locator.0xifNOT"/>
+        <argument key="App\Controller\AdminController::showOffresStage" type="service" id=".service_locator.BKGwNgw"/>
+        <argument key="App\Controller\AdminController::showTutorats" type="service" id=".service_locator.EUX4yGg"/>
         <argument key="App\Controller\MMAsiteController::Home" type="service" id=".service_locator.0xifNOT"/>
+        <argument key="App\Controller\MMAsiteController::ShowOffreStage" type="service" id=".service_locator.BKGwNgw"/>
         <argument key="App\Controller\MMAsiteController::lesAnnalesmenu" type="service" id=".service_locator.qNknoeq"/>
+        <argument key="App\Controller\MMAsiteController::lesOffreStage" type="service" id=".service_locator.BKGwNgw"/>
         <argument key="App\Controller\MMAsiteController::lesemploisdutempsmenu" type="service" id=".service_locator.aZtBke8"/>
         <argument key="App\Controller\MMAsiteController::showEdt" type="service" id=".service_locator.Xmiscbh"/>
         <argument key="App\Controller\MMAsiteController::showEvent" type="service" id=".service_locator.0xifNOT"/>
         <argument key="App\Controller\MMAsiteController::showEvents" type="service" id=".service_locator.0xifNOT"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.EbLunuf"/>
+        <argument key="App\Controller\AdminController:CreateOffreStage" type="service" id=".service_locator.CLwvqTZ"/>
+        <argument key="App\Controller\AdminController:CreateTutorat" type="service" id=".service_locator.zbFsM9Z"/>
+        <argument key="App\Controller\AdminController:DeleteAnnale" type="service" id=".service_locator.qNknoeq"/>
         <argument key="App\Controller\AdminController:DeleteEvent" type="service" id=".service_locator.dU7J6TP"/>
+        <argument key="App\Controller\AdminController:DeleteOffre" type="service" id=".service_locator.3jktu2N"/>
+        <argument key="App\Controller\AdminController:DeleteTutorat" type="service" id=".service_locator.BCcm9LD"/>
         <argument key="App\Controller\AdminController:createEvent" type="service" id=".service_locator.LvxXihR"/>
+        <argument key="App\Controller\AdminController:showAnnale" type="service" id=".service_locator.qNknoeq"/>
+        <argument key="App\Controller\AdminController:showAnnales" type="service" id=".service_locator.qNknoeq"/>
         <argument key="App\Controller\AdminController:showEvents" type="service" id=".service_locator.0xifNOT"/>
+        <argument key="App\Controller\AdminController:showOffresStage" type="service" id=".service_locator.BKGwNgw"/>
+        <argument key="App\Controller\AdminController:showTutorats" type="service" id=".service_locator.EUX4yGg"/>
         <argument key="App\Controller\MMAsiteController:Home" type="service" id=".service_locator.0xifNOT"/>
+        <argument key="App\Controller\MMAsiteController:ShowOffreStage" type="service" id=".service_locator.BKGwNgw"/>
         <argument key="App\Controller\MMAsiteController:lesAnnalesmenu" type="service" id=".service_locator.qNknoeq"/>
+        <argument key="App\Controller\MMAsiteController:lesOffreStage" type="service" id=".service_locator.BKGwNgw"/>
         <argument key="App\Controller\MMAsiteController:lesemploisdutempsmenu" type="service" id=".service_locator.aZtBke8"/>
         <argument key="App\Controller\MMAsiteController:showEdt" type="service" id=".service_locator.Xmiscbh"/>
         <argument key="App\Controller\MMAsiteController:showEvent" type="service" id=".service_locator.0xifNOT"/>
@@ -5196,10 +5268,12 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.KqfP9O1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.ibK6lxe" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\EventType" type="service" id="App\Form\EventType"/>
+        <argument key="App\Form\OffreStageType" type="service" id="App\Form\OffreStageType"/>
+        <argument key="App\Form\TutoratType" type="service" id="App\Form\TutoratType"/>
         <argument key="FOS\CKEditorBundle\Form\Type\CKEditorType" type="service" id="fos_ck_editor.form.type"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
@@ -5539,12 +5613,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.X9sqLp5"/>
+      <argument type="service" id=".service_locator.zKZMrH0"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.X9sqLp5"/>
+      <argument type="service" id=".service_locator.zKZMrH0"/>
     </service>
     <service id=".service_locator.UwRI0uT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
@@ -5931,7 +6005,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" alias="webpack_encore.entrypoint_lookup_collection" public="false"/>
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.X9sqLp5"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.zKZMrH0"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>

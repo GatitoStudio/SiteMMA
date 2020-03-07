@@ -98,13 +98,19 @@ class __TwigTemplate_3edf5c052471ef1b48f17ca74ae0901975da021e68806ace3e2cd8769f4
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("events");
         echo "\">Evenements</a>
       </li>
+      <li class=\"nav-item\">
+        <a class=\"nav-link\" href=\"";
+        // line 36
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("OffresStage");
+        echo "\">Offres de stage</a>
+      </li>
       <li class=\"nav-item dropdown \">
         <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
           Annales 
         </a>
         <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
           ";
-        // line 40
+        // line 43
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\MMAsiteController::lesAnnalesmenu"));
         echo "
 
@@ -115,7 +121,7 @@ class __TwigTemplate_3edf5c052471ef1b48f17ca74ae0901975da021e68806ace3e2cd8769f4
         </a>
         <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
           ";
-        // line 48
+        // line 51
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\MMAsiteController::lesemploisdutempsmenu"));
         echo "
       </li>
@@ -128,18 +134,18 @@ class __TwigTemplate_3edf5c052471ef1b48f17ca74ae0901975da021e68806ace3e2cd8769f4
 
 
       ";
-        // line 58
+        // line 61
         $this->displayBlock('body', $context, $blocks);
-        // line 60
+        // line 63
         echo "
 
   
 
 \t
         ";
-        // line 65
+        // line 68
         $this->displayBlock('javascript', $context, $blocks);
-        // line 69
+        // line 75
         echo "
     </body>
     <footer>
@@ -194,7 +200,7 @@ class __TwigTemplate_3edf5c052471ef1b48f17ca74ae0901975da021e68806ace3e2cd8769f4
 
     }
 
-    // line 58
+    // line 61
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -214,7 +220,7 @@ class __TwigTemplate_3edf5c052471ef1b48f17ca74ae0901975da021e68806ace3e2cd8769f4
 
     }
 
-    // line 65
+    // line 68
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -224,9 +230,21 @@ class __TwigTemplate_3edf5c052471ef1b48f17ca74ae0901975da021e68806ace3e2cd8769f4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascript"));
 
-        // line 66
+        // line 69
         echo "
-        
+        <script src=\"";
+        // line 70
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("datatablejquery"), "html", null, true);
+        echo "\"></script>
+        <script src=\"";
+        // line 71
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("datatableBoostrap"), "html", null, true);
+        echo "\"></script>
+        <!-- Page level custom scripts -->
+        <script src=\"";
+        // line 73
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("datatable"), "html", null, true);
+        echo "\"></script>
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -248,7 +266,7 @@ class __TwigTemplate_3edf5c052471ef1b48f17ca74ae0901975da021e68806ace3e2cd8769f4
 
     public function getDebugInfo()
     {
-        return array (  228 => 66,  218 => 65,  198 => 58,  178 => 13,  159 => 5,  143 => 69,  141 => 65,  134 => 60,  132 => 58,  119 => 48,  108 => 40,  98 => 33,  92 => 30,  80 => 21,  75 => 19,  71 => 18,  66 => 15,  64 => 13,  53 => 5,  47 => 1,);
+        return array (  246 => 73,  241 => 71,  237 => 70,  234 => 69,  224 => 68,  204 => 61,  184 => 13,  165 => 5,  149 => 75,  147 => 68,  140 => 63,  138 => 61,  125 => 51,  114 => 43,  104 => 36,  98 => 33,  92 => 30,  80 => 21,  75 => 19,  71 => 18,  66 => 15,  64 => 13,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -287,6 +305,9 @@ class __TwigTemplate_3edf5c052471ef1b48f17ca74ae0901975da021e68806ace3e2cd8769f4
 \t        <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"{{path('events')}}\">Evenements</a>
       </li>
+      <li class=\"nav-item\">
+        <a class=\"nav-link\" href=\"{{path('OffresStage')}}\">Offres de stage</a>
+      </li>
       <li class=\"nav-item dropdown \">
         <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
           Annales 
@@ -319,7 +340,10 @@ class __TwigTemplate_3edf5c052471ef1b48f17ca74ae0901975da021e68806ace3e2cd8769f4
 \t
         {% block javascript %}
 
-        
+        <script src=\"{{ asset('datatablejquery') }}\"></script>
+        <script src=\"{{ asset('datatableBoostrap') }}\"></script>
+        <!-- Page level custom scripts -->
+        <script src=\"{{ asset('datatable') }}\"></script>
         {% endblock %}
 
     </body>

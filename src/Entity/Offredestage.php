@@ -68,7 +68,7 @@ class Offredestage
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="Annee", type="datetime", nullable=false)
+     * @ORM\Column(name="Annee", type="integer", nullable=false)
      */
     private $annee;
 
@@ -112,12 +112,12 @@ class Offredestage
         return $this;
     }
 
-    public function getDatepublication(): ?\DateTimeInterface
+    public function getDatePublication(): ?\DateTimeInterface
     {
         return $this->datepublication;
     }
 
-    public function setDatepublication(\DateTimeInterface $datepublication): self
+    public function setDatePublication(\DateTimeInterface $datepublication): self
     {
         $this->datepublication = $datepublication;
 
@@ -172,12 +172,12 @@ class Offredestage
         return $this;
     }
 
-    public function getAnnee(): ?\DateTimeInterface
+    public function getAnnee(): ?int
     {
         return $this->annee;
     }
 
-    public function setAnnee(\DateTimeInterface $annee): self
+    public function setAnnee(int $annee): self
     {
         $this->annee = $annee;
 

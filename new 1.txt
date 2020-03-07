@@ -24,3 +24,7 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+
+
+                  <a aria-disabled="true" onclick="if(window.confirm('Voulez-vous vraiment supprimer ?')){return true;}else{return false;}"  href="{{path('deleteAnnale',{id:annale.Id } )}}" ><i class="material-icons"> delete</i></a>
+            <a class="collapse-item" href="{{path('createAnnale')}}">Ajouter un annale</a>

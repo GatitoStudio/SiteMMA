@@ -32,6 +32,9 @@
 	        <li class="nav-item">
         <a class="nav-link" href="{{path('events')}}">Evenements</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{path('OffresStage')}}">Offres de stage</a>
+      </li>
       <li class="nav-item dropdown ">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Annales 
@@ -64,7 +67,10 @@
 	
         {% block javascript %}
 
-        
+        <script src="{{ asset('datatablejquery') }}"></script>
+        <script src="{{ asset('datatableBoostrap') }}"></script>
+        <!-- Page level custom scripts -->
+        <script src="{{ asset('datatable') }}"></script>
         {% endblock %}
 
     </body>
